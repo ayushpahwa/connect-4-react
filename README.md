@@ -1,6 +1,6 @@
 # Connect 4 Game in React
 
-## Check out the [live demo](https://wonderful-cray-0e6903.netlify.app/game)
+Check out the [live demo](https://wonderful-cray-0e6903.netlify.app)
 
 ## Mock Ups for inspiration
 
