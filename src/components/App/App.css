@@ -1,0 +1,52 @@
+.App {
+    background-color: aliceblue;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    height: 5em;
+}
+
+.top-bar p {
+    text-align: center;
+    align-content: center;
+    font-weight: bold;
+    height: min-content;
+    align-self: center;
+    width: 100%;
+}
+
+* {
+    font-family: 'Poppins';
+}
+
+.ui.card {
+    border-radius: 30px;
+}
+
+img {
+  height: 70%;
+  left: 50%;
+  position: absolute;
+  stroke: currentColor;
+  stroke-width: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+}
+
+.img-container {
+  position: relative;
+  border-radius: 50%;
+  height: 3.5em;
+  width: 3.5em;
+  border: solid;
+  border-color: #b1c4f9;
+  margin-right: 2em;
+  border-width: 5px;
+}

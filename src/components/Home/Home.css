@@ -1,0 +1,46 @@
+.ui.card.main {
+  align-self: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ui.card.home-container {
+  align-self: center;
+  width: auto;
+  padding: 20px;
+}
+
+.home-title {
+  font: normal normal 600 28px/42px Poppins;
+  letter-spacing: 0px;
+  color: #3d4276;
+  text-transform: uppercase;
+  opacity: 1;
+  font-size: 24px;
+  margin: 10px;
+}
+
+.home-subtitle {
+  text-align: left;
+  font: normal normal normal 18px/27px Poppins;
+  letter-spacing: 0px;
+  color: #949494;
+  opacity: 1;
+  font-size: 18px;
+  margin: 10px;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.ui.button.home-action-buttons {
+    width: 50%;
+    margin: 10px;
+    color: white;
+    height: 5em;
+    border-radius: 15px !important;
+    font-size: 14px;
+}

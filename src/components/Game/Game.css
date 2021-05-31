@@ -1,0 +1,148 @@
+.Game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bg-card {
+  background-color: #f5f5f5;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+}
+
+#game-container {
+  flex: 2 2 0;
+  margin: 0px;
+  display: flex;
+  overflow: hidden;
+  background-color: #84A4FC;
+}
+
+#info-container {
+  flex: 1 1 0;
+  margin: 0px;
+  padding: 30px;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.item-row {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: space-evenly;
+}
+
+.item {
+  height: 3em;
+  width: 3em;
+  border-radius: 100px;
+  border: double;
+  border-color: black;
+  background-color: white;
+  margin: 1em;
+  position: relative;
+}
+
+.info-title {
+  font-size: 1.5em;
+  letter-spacing: 0px;
+  color: #424242;
+  opacity: 1;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.info-subtitle {
+  font-size: 1em;
+  letter-spacing: 0px;
+  color: #505351;
+  opacity: 1;
+  text-align: center;
+}
+
+#card-p1,
+#card-p2 {
+  justify-self: center;
+  height: 6em;
+  width: 100%;
+  border-radius: 15px;
+}
+
+#card-p1 {
+  background-color: #dcf6e4;
+}
+
+#card-p2 {
+  background-color: #f6efd5;
+}
+
+#action-undo,
+#action-end-tournament {
+  margin: 1em;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid #70707026;
+  border-radius: 20px;
+  width: 90%;
+  height: 4em;
+  align-self: center;
+  font-size: 18px;
+}
+
+#action-undo {
+  background: #4b7bff 0% 0% no-repeat padding-box;
+  text-align: center;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+#action-end-tournament {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+  text-align: center;
+  letter-spacing: 0px;
+  color: #CC0000;
+  opacity: 1;
+}
+
+.player-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+  overflow: auto;
+}
+
+.score-container {
+  display: flex;
+  width: 100%;
+  height: -webkit-fill-available;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.score-container div {
+  display: block;
+}
+
+.score-container p {
+  display: inline;
+}
+
+.info-icon-container {
+  height: 4.2em;
+  width: 4.2em;
+  padding: 10px;
+  border-radius: 50%;
+  border: solid;
+  border-color: transparent;
+  border-width: 5px;
+}
+
+.info-icon-container .img-container {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
