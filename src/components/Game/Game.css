@@ -197,31 +197,26 @@
   }
 
   #game-container {
-    overflow-x: scroll;
-    min-height: 35em;
-  }
-  .item-boundary {
-    margin-left: 100px;
-    margin-right: 20px;
+    min-height: 25em;
   }
 
   .item {
-    width: 3em;
-    height: 3em;
+    width: 2em;
+    height: 2em;
   }
 
   .item-boundary {
     display: grid;
-    grid-template-columns: repeat(8, 3em);
-    grid-template-rows: repeat(8, 3em);
+    grid-template-columns: repeat(8, 2em);
+    grid-template-rows: repeat(8, 2em);
     background-color: #84a4fc;
-    height: 32em;
-    width: 32em;
-    grid-gap: 1em;
-    padding-top: .5em;
-    padding-left: .5em;
+    height: 20em;
+    width: 20em;
+    grid-gap: .5em;
+    padding-top: .25em;
+    padding-left: .25em;
     /* we need a background to cover only the middle part not the whole element*/
-    background:linear-gradient(#84A4FC 0 0) center/calc(100% - 1.5em) calc(100% - 1.5em) no-repeat;
+    background:linear-gradient(#84A4FC 0 0) center/calc(100% - 1em) calc(100% - 1em) no-repeat;
     filter:url(#round); /* this */
   }
 }
