@@ -17,13 +17,13 @@ const configReducer = (state, action) => {
       newModalConfig["isNameType"] = true;
       break;
     case "game":
-      newModalConfig["title"] = "Enter your game";
+      newModalConfig["title"] = "Number of games";
       newModalConfig["submitText"] = "Submit";
       newModalConfig["isGameType"] = true;
       newModalConfig["isNameType"] = false;
       break;
     case "turn":
-      newModalConfig["title"] = "Enter your turn";
+      newModalConfig["title"] = "Who starts";
       newModalConfig["submitText"] = "Submit";
       newModalConfig["isTurnType"] = true;
       newModalConfig["isNameType"] = false;

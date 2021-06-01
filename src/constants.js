@@ -2,8 +2,9 @@ import avatar01 from './assets/avatar01.png'
 import avatar02 from './assets/avatar02.png'
 import run from './assets/run.png'
 import winner from './assets/winner.png'
+import homeImage from './assets/homeImage.png'
 
-export const IMAGE_DATA = [avatar01,avatar02,run,winner];
+export const IMAGE_DATA = [avatar01,avatar02,run,winner,homeImage];
 
 export const numOfGamesList = [2, 3, 5, 10];
 

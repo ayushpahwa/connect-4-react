@@ -1,14 +1,15 @@
-.Game {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 #bg-card {
+  align-self: center;
+  justify-self: center;
   background-color: #f5f5f5;
   width: 90%;
+  max-width: 66em;
   display: flex;
   flex-direction: row;
+}
+
+.game-container-grid {
+  width: 100%;
 }
 
 #game-container {
@@ -18,6 +19,7 @@
   overflow: hidden;
   align-items: center;
   justify-content: center;
+  max-width: 44em;
 }
 
 .item-boundary {
@@ -25,7 +27,6 @@
   grid-template-columns: repeat(8, 4em);
   grid-template-rows: repeat(8, 4em);
   background-color: #84a4fc;
-  width: fit-content;
   height: 40em;
   width: 40em;
   grid-gap: 1em;
@@ -54,6 +55,7 @@
   padding: 30px;
   justify-content: center;
   overflow-y: scroll;
+  max-width: 22em;
 }
 
 .item-row {
@@ -163,4 +165,63 @@
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+}
+
+@media only screen and (max-width: 1000px) {
+  #bg-card {
+    flex-direction: column;
+    max-width: 44em;
+    height: auto;
+    overflow: overlay;
+  }
+
+  #game-container {
+    width: 100%;
+    flex: 1 1 0;
+    min-height: 44em;
+  }
+
+  #info-container {
+    width: 100%;
+    flex: 1 1 0;
+    max-width: 44em;
+    overflow: visible;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #bg-card {
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+  }
+
+  #game-container {
+    overflow-x: scroll;
+    min-height: 35em;
+  }
+  .item-boundary {
+    margin-left: 100px;
+    margin-right: 20px;
+  }
+
+  .item {
+    width: 3em;
+    height: 3em;
+  }
+
+  .item-boundary {
+    display: grid;
+    grid-template-columns: repeat(8, 3em);
+    grid-template-rows: repeat(8, 3em);
+    background-color: #84a4fc;
+    height: 32em;
+    width: 32em;
+    grid-gap: 1em;
+    padding-top: .5em;
+    padding-left: .5em;
+    /* we need a background to cover only the middle part not the whole element*/
+    background:linear-gradient(#84A4FC 0 0) center/calc(100% - 1.5em) calc(100% - 1.5em) no-repeat;
+    filter:url(#round); /* this */
+  }
 }
