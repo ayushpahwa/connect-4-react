@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import { connect } from 'react-redux';
-import { Card, Grid } from 'semantic-ui-react';
+import { Card} from 'semantic-ui-react';
 import { resetScoresAction, updateScoresAction, updateTurnIdAction } from '../../redux/actions';
 import { getGameInfo, getPlayerInfo } from '../../redux/selectors';
 import './Game.css';
