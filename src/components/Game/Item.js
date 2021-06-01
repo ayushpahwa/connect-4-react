@@ -8,7 +8,7 @@ export const Item = ({ value, col, row, onItemClicked }) => {
     if (value > 2) {
         value -= 2;
         border = 'solid';
-        borderColor = 'red';
+        borderColor = '#FFFF00';
     }
     if (value === 1) {
         backgroundColor = P1_COLOR;
@@ -24,7 +24,7 @@ export const Item = ({ value, col, row, onItemClicked }) => {
         }}
             onMouseOver={(e) => {
                 if (row === 0 && value === 0) {
-                    e.target.style.backgroundColor = 'red';
+                    e.target.style.backgroundColor = '#FFFF00';
                 }
             }}
             onMouseLeave={(e) => {

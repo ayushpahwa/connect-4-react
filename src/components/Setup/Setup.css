@@ -32,3 +32,10 @@ span {
 .ui.input {
   width: 100%;
 }
+
+
+@media only screen and (max-width: 700px) {
+  .ui.card.Setup {
+    width: 95%;
+  }
+}
