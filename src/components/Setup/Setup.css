@@ -1,6 +1,7 @@
 .ui.card.Setup {
   display: flex;
   align-self: center;
+  align-items: center;
   padding: 32px;
   width: auto;
 }

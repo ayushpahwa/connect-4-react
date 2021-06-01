@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import { connect } from 'react-redux';
-import { Card } from 'semantic-ui-react';
+import { Card, Grid } from 'semantic-ui-react';
 import { resetScoresAction, updateScoresAction, updateTurnIdAction } from '../../redux/actions';
 import { getGameInfo, getPlayerInfo } from '../../redux/selectors';
 import './Game.css';
@@ -99,49 +99,51 @@ const Game = ({ players, gameInfoObj, updateScores, updateCurrentTurnId, resetSc
     }
 
     return (
-        <div className="Game">
-            <Card id="bg-card">
-                <Card id="game-container">
-                    <div class="item-boundary">
-                        {gameArray.map((colsArray, rowIndex) => {
-                            return (
-                                // <div className='item-row' key={'row' + rowIndex} >
-                                colsArray.map((col, colIndex) => {
-                                    return (
-                                        <Item
-                                            key={rowIndex + ',' + colIndex + ',' + col}
-                                            value={col}
-                                            col={colIndex}
-                                            row={rowIndex}
-                                            onItemClicked={handleItemClick}
-                                        />
-                                    )
-                                })
-                                // </div>
-                            )
-                        })}
-                    </div>
-                    <svg style={{visibility: 'hidden', position: 'absolute'}} width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                        <defs>
-                            <filter id="round">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
-                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                            </filter>
-                        </defs>
-                    </svg>
-                </Card>
-                <GameInfo
-                    isGameOver={isGameOver}
-                    isTournamentOver={isTournamentOver}
-                    players={players}
-                    gameInfoObj={gameInfoObj}
-                    currentTurnId={currentTurnId}
-                    handleUndo={handleUndo}
-                    handleNextGameClick={handleNextGameClick}
-                />
-            </Card>
-        </div>
+        <Card id="bg-card">
+            {/* <Grid stackable columns={3} className="game-container-grid">
+                <Grid.Column width={2}> */}
+                    <Card id="game-container">
+                        <div class="item-boundary">
+                            {gameArray.map((colsArray, rowIndex) => {
+                                return (
+                                    colsArray.map((col, colIndex) => {
+                                        return (
+                                            <Item
+                                                key={rowIndex + ',' + colIndex + ',' + col}
+                                                value={col}
+                                                col={colIndex}
+                                                row={rowIndex}
+                                                onItemClicked={handleItemClick}
+                                            />
+                                        )
+                                    })
+                                )
+                            })}
+                        </div>
+                        <svg style={{ visibility: 'hidden', position: 'absolute' }} width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <defs>
+                                <filter id="round">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                                    <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </Card>
+                {/* </Grid.Column>
+                <Grid.Column width={1}> */}
+                    <GameInfo
+                        isGameOver={isGameOver}
+                        isTournamentOver={isTournamentOver}
+                        players={players}
+                        gameInfoObj={gameInfoObj}
+                        currentTurnId={currentTurnId}
+                        handleUndo={handleUndo}
+                        handleNextGameClick={handleNextGameClick}
+                    />
+                {/* </Grid.Column> */}
+            {/* </Grid> */}
+        </Card>
     );
 }
 
