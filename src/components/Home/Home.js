@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Card, Grid, Modal } from 'semantic-ui-react'
+import { Button, Card, Divider, Grid, Modal } from 'semantic-ui-react'
+import { IMAGE_DATA } from '../../constants';
 
 import './Home.css'
 
@@ -10,9 +11,16 @@ export const Home = () => {
 
     return (
         <Card className="home-container">
-            <p className="home-title">Connect 4!</p>
-            <p className="home-subtitle">Play with other players around the world!</p>
-
+            <Grid stackable columns={2}>
+                <Grid.Column className="home-title-container">
+                    <p className="home-title">Connect 4!</p>
+                    <p className="home-subtitle">Play with other players around the world!</p>
+                </Grid.Column>
+                <Grid.Column className="home-img-container">
+                    <img src={IMAGE_DATA[4]} alt="Four in a row" />
+                </Grid.Column>
+            </Grid>
+            <Divider />
             <Grid stackable columns={2}>
                 <Grid.Row>
                     <Grid.Column>
