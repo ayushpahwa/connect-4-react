@@ -102,10 +102,11 @@ const Game = ({ players, gameInfoObj, updateScores, updateCurrentTurnId, resetSc
         <div className="Game">
             <Card id="bg-card">
                 <Card id="game-container">
-                    {gameArray.map((colsArray, rowIndex) => {
-                        return (
-                            <div className='item-row' key={'row' + rowIndex} >
-                                {colsArray.map((col, colIndex) => {
+                    <div class="item-boundary">
+                        {gameArray.map((colsArray, rowIndex) => {
+                            return (
+                                // <div className='item-row' key={'row' + rowIndex} >
+                                colsArray.map((col, colIndex) => {
                                     return (
                                         <Item
                                             key={rowIndex + ',' + colIndex + ',' + col}
@@ -115,10 +116,20 @@ const Game = ({ players, gameInfoObj, updateScores, updateCurrentTurnId, resetSc
                                             onItemClicked={handleItemClick}
                                         />
                                     )
-                                })}
-                            </div>
-                        )
-                    })}
+                                })
+                                // </div>
+                            )
+                        })}
+                    </div>
+                    <svg style={{visibility: 'hidden', position: 'absolute'}} width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <defs>
+                            <filter id="round">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                            </filter>
+                        </defs>
+                    </svg>
                 </Card>
                 <GameInfo
                     isGameOver={isGameOver}

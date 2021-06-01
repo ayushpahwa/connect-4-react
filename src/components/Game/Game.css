@@ -14,10 +14,37 @@
 #game-container {
   flex: 2 2 0;
   margin: 0px;
-  display: flex;
-  overflow: hidden;
-  background-color: #84A4FC;
   border-radius: 30px !important;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-boundary {
+  display: grid;
+  grid-template-columns: repeat(8, 4em);
+  grid-template-rows: repeat(8, 4em);
+  background-color: #84a4fc;
+  width: fit-content;
+  height: 40em;
+  width: 40em;
+  grid-gap: 1em;
+  padding-top: .5em;
+  padding-left: .5em;
+  /* we need a background to cover only the middle part not the whole element*/
+  background:linear-gradient(#84A4FC 0 0) center/calc(100% - 2em) calc(100% - 2em) no-repeat;
+  filter:url(#round); /* this */
+}
+
+.item {
+  background-color: white;
+  width: 4em;
+  height: 4em;
+  box-shadow: 
+  inset 0px 3px 6px #00000040,
+  0 0 0 0.3em #84A4FC;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
 }
 
 #info-container {
@@ -32,17 +59,6 @@
   display: flex;
   flex: 1 1 0;
   justify-content: space-evenly;
-}
-
-.item {
-  height: 3em;
-  width: 3em;
-  border-radius: 100px;
-  border: double;
-  border-color: black;
-  background-color: white;
-  margin: 1em;
-  position: relative;
 }
 
 .info-title {
@@ -103,7 +119,7 @@
   opacity: 1;
   text-align: center;
   letter-spacing: 0px;
-  color: #CC0000;
+  color: #cc0000;
   opacity: 1;
 }
 
