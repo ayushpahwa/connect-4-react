@@ -210,9 +210,9 @@
     grid-template-columns: repeat(8, 2em);
     grid-template-rows: repeat(8, 2em);
     background-color: #84a4fc;
-    height: 20em;
-    width: 20em;
-    grid-gap: .5em;
+    height: 23.5em;
+    width: 23.5em;
+    grid-gap: 1em;
     padding-top: .25em;
     padding-left: .25em;
     /* we need a background to cover only the middle part not the whole element*/
