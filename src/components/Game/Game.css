@@ -45,6 +45,7 @@
   0 0 0 0.3em #84A4FC;
   border-radius: 50%;
   border: 2px solid #FFFFFF;
+  position: relative;
 }
 
 #info-container {
