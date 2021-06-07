@@ -34,6 +34,7 @@ const Setup = ({ config, onSubmitSettings }) => {
             }
         );
         const file = await fileHandle.getFile();
+        console.log(URL.createObjectURL(file))
         if (file.type && !file.type.startsWith('image/')) {
             console.log('File is not an image.', file.type, file);
             return;
@@ -45,6 +46,7 @@ const Setup = ({ config, onSubmitSettings }) => {
             } else{
                 setPlayer02Src(event.target.result);
             }
+            
         });
         reader.readAsDataURL(file);
     }
