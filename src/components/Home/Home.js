@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button, Card, Divider, Grid, Modal } from 'semantic-ui-react'
-import { IMAGE_DATA } from '../../constants';
+import homeImage from '../../assets/homeImage.png'
 
 import './Home.css'
 
@@ -17,7 +17,7 @@ export const Home = () => {
                     <p className="home-subtitle">Play with other players around the world!</p>
                 </Grid.Column>
                 <Grid.Column className="home-img-container">
-                    <img src={IMAGE_DATA[4]} alt="Four in a row" />
+                    <img src={homeImage} alt="Four in a row" />
                 </Grid.Column>
             </Grid>
             <Divider />

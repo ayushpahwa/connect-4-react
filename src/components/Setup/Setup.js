@@ -17,29 +17,65 @@ const Setup = ({ config, onSubmitSettings }) => {
     let [modalData, setModalData] = useState(config);
     let [modalSettings, setModalSettings] = useState(MODAL_SETTINGS_DEFAULT);
     let history = useHistory();
+    let fileHandle;
+    let [player01Src,setPlayer01Src] = useState(IMAGE_DATA[0]);
+    let [player02Src,setPlayer02Src] = useState(IMAGE_DATA[1]);
+    async function fileOpen(playerID) {
+        [fileHandle] = await window.showOpenFilePicker(
+            {
+                types: [
+                    {
+                        description: 'Images',
+                        accept: {
+                            'image/*': ['.png', '.gif', '.jpeg', '.jpg']
+                        }
+                    }
+                ],
+            }
+        );
+        const file = await fileHandle.getFile();
+        if (file.type && !file.type.startsWith('image/')) {
+            console.log('File is not an image.', file.type, file);
+            return;
+        }
+        const reader = new FileReader();
+        reader.addEventListener('load', (event) => {
+            if (playerID === 1) {
+                setPlayer01Src(event.target.result);
+            } else{
+                setPlayer02Src(event.target.result);
+            }
+        });
+        reader.readAsDataURL(file);
+    }
+
+    // let img1 = import(IMAGE_DATA[0]);
     return (
         <>
             <Card className="Setup">
-                <Card style={{ backgroundColor: P1_COLOR_BG }} className="user-card-container" onClick={() => { setModalSettings(MODAL_SETTINGS_NAME_INPUT_1) }} >
+                <Card style={{ backgroundColor: P1_COLOR_BG }} className="user-card-container" >
                     <Card.Content className="user-card" >
-                        <div style={{ borderColor: P1_COLOR }} className="img-container">
-                            <img src={IMAGE_DATA[0]} alt="Player 01" />
+                        <div style={{ borderColor: P1_COLOR }} className="img-container"
+                            onClick={() => {
+                                fileOpen(1);
+                            }}>
+                            <img src={player01Src} alt="Player 01" />
                         </div>
                         <div>
-                            <Card.Meta>
+                            <Card.Meta onClick={() => { setModalSettings(MODAL_SETTINGS_NAME_INPUT_1) }}>
                                 <span >Player 01</span>
                             </Card.Meta>
                             <Card.Header>{modalData.namePlayer01}</Card.Header>
                         </div>
                     </Card.Content>
                 </Card>
-                <Card style={{ backgroundColor: P2_COLOR_BG }} className="user-card-container" onClick={() => { setModalSettings(MODAL_SETTINGS_NAME_INPUT_2) }} >
+                <Card style={{ backgroundColor: P2_COLOR_BG }} className="user-card-container" >
                     <Card.Content className="user-card" >
-                        <div style={{ borderColor: P2_COLOR }}  className="img-container">
-                            <img src={IMAGE_DATA[1]} alt="Player 02" />
+                        <div style={{ borderColor: P2_COLOR }} className="img-container" onClick={() => { fileOpen(2); }}>
+                            <img src={player02Src} alt="Player 02" />
                         </div>
                         <div>
-                            <Card.Meta>
+                            <Card.Meta onClick={() => { setModalSettings(MODAL_SETTINGS_NAME_INPUT_2) }} >
                                 <span >Player 02</span>
                             </Card.Meta>
                             <Card.Header>{modalData.namePlayer02}</Card.Header>
@@ -72,7 +108,7 @@ const Setup = ({ config, onSubmitSettings }) => {
                         </div>
                     </Card.Content>
                 </Card>
-                <Divider style={{ margin: '10px', width:'100%' }} />
+                <Divider style={{ margin: '10px', width: '100%' }} />
                 <Button
                     content='Start Game'
                     primary
@@ -82,7 +118,7 @@ const Setup = ({ config, onSubmitSettings }) => {
                         history.push('/game')
                     }}
                 />
-            </Card>
+            </Card >
             <SetupModal
                 modalSettings={modalSettings}
                 onModalClosed={setModalSettings}

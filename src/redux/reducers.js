@@ -1,3 +1,4 @@
+import { IMAGE_DATA } from '../constants';
 import { RESET_SCORE, SET_CONFIG, UPDATE_SCORE, UPDATE_TURN_ID } from './types';
 
 export const INITIAL_STATE = {
@@ -6,10 +7,12 @@ export const INITIAL_STATE = {
             {
                 name: 'New Player 01',
                 score: 0,
+                avatar: IMAGE_DATA[0]
             },
             {
                 name: 'New Player 02',
                 score: 0,
+                avatar: IMAGE_DATA[1]
             },
         ],
         numOfGames: 5,
